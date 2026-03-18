@@ -1,15 +1,16 @@
 # TECHNICAL REPORT
 
 **Course:** PFP191 - Programming Fundamentals with Python
+
 **Project Topic:** Topic 2 - Book Management in the Library
+
 **University:** FPT University
 
-**Group Members:** 1. [Student Name 1] - [Student ID 1]
-2. [Student Name 2] - [Student ID 2]
-3. [Student Name 3] - [Student ID 3]
+**Main contributor:** 1. Phan Lê Thanh Hùng - QE210207
 
-**Instructor:** [Instructor's Name]
-**Date:** [Submission Date]
+**Instructor:** Khoa Nguyen
+
+**Date:** 24/03/2026
 
 ---
 
