@@ -4,3 +4,7 @@ __pycache__/
 
 # VS Code
 .vscode/
+
+# Ignore database (Tùy chọn: Nếu bạn không muốn đẩy data thật lên mạng)
+README.pdf
+Project_Assignment_Final_PFP191_Topic2.pdf
