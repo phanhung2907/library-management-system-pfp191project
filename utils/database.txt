@@ -18,3 +18,4 @@
 978-1492032649, machine learning design patterns, valliappa lakshmanan, khoa học máy tính, 2020, 4
 978-0465050659, the design of everyday things, don norman, kỹ năng mềm, 2013, 5
 978-1593279288, python crash course, eric matthes, khoa học máy tính, 2019, 7
+96-12345, lịch sử thế giới, nobi, lịch sử, 1990, 2
