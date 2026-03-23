@@ -60,6 +60,7 @@ The system is designed with a high degree of cohesion and low coupling, utilizin
 * `Interface`: Manages the CLI, input preprocessing, and user interactions.
 
 ![UML Design](AnimalClassHierarchy.png)
+![UML Design](flowchart.png)
 
 ### 2.3 Modular Structure
 To adhere to the "Modular Design" technical requirement, the codebase is separated into logical packages:
