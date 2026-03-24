@@ -1,8 +1,15 @@
 from interface import Interface
+import os
+
+def clear_screen():
+    # Kiểm tra nếu là Windows thì dùng 'cls', ngược lại (Mac/Linux) dùng 'clear'
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def main():
     interface = Interface()
     print('--- Chương trình quản lý thư viện đã mở ---')
     while True:
+        clear_screen()
         print('--- MENU ---')
         print('1. Hiển thị sách trong thư viện')
         print('2. Mượn sách')
