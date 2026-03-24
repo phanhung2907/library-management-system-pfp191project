@@ -116,6 +116,33 @@ The architecture treats the RAM (the Hashtable) as the "Single Source of Truth" 
 * **Initialization:** Upon system startup, `database.txt` is ingested. Lines are stripped of whitespace and trailing newline characters, then parsed into `Book` objects and hashed into memory.
 * **The "Overwrite" Synchronization Strategy:** To avoid the complexities and potential corruption of updating specific lines within a sequential text file, the system uses the `save_all_to_database()` method. Triggered after any mutative operation (Add, Update, Delete), this method opens the file in write mode (`'w'`), wiping the old data, and rapidly serializes the entire current state of the RAM back to the disk. 
 
+```python
+class BookDatabase:
+    def __init__(self, data_path):
+        self._hashtable = defaultdict(list)
+        self.__data_path = data_path
+        self.categories = set()
+
+        with open(data_path, 'r', encoding='utf-8') as file:
+            for row in file.readlines():
+                row = [item.strip() for item in row.strip('\n').split(',')]
+                isbn, title, author, category, p_year, amount = row
+                isbn, title, author, category = isbn.lower(), title.lower(), author.lower(), category.lower()
+                self.categories.add(category)
+                new_book = Book(isbn, title, author, category, int(p_year), int(amount))
+                BookDatabase.initialize_book(self, new_book)
+```
+```python
+    def save_all_to_database(self):
+        try:
+            with open(self.__data_path, 'w', encoding='utf-8') as file:
+                for book_list in self._hashtable.values():
+                    for book in book_list:
+                        row = f'{book.isbn}, {book.title}, {book.author}, {book.category}, {book.p_year}, {book.amount}\n'
+                        file.writelines(row)
+        except Exception as e:
+            print(f"Lỗi khi lưu database: {e}")
+```
 ---
 
 ## 4. ADVANCED FEATURES
